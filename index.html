@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="styleTags.css">
+<link rel="stylesheet" href="style.css">
+
+<div class="field-tags">
+    <p>Tagi:</p>
+    <div class="one">
+        <input type=text name="tags_name" value="last">
+    </div>
+</div>
+
+<div class="field-tags-list">
+    <div class="itemtag">xxx</div>
+    <div class="itemtag">xsx</div>
+    <div class="itemtag">x3x</div>
+    <div class="itemtag">x4x</div>
+</div>
+
+<script src="scripTags.js"></script>
+
+<script>
+     const configOne = {
+            inputName: "tags_name",
+            separate: ", ",
+            type: "text",
+            limit: 255
+        };
+        const tagsOne = new Tags(configOne, 'pl');
+</script>
