@@ -1,28 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="pl" />
+<title>Krowdel input tag drop</title>
+<script src="scripTags.js"></script>
 <link rel="stylesheet" href="styleTags.css">
 <link rel="stylesheet" href="style.css">
 
-<div class="field-tags">
-    <p>Tagi:</p>
-    <div class="one">
-        <input type=text name="tags_name" value="last">
-    </div>
-</div>
 
-<div class="field-tags-list">
-    <div class="itemtag">xxx</div>
-    <div class="itemtag">xsx</div>
-    <div class="itemtag">x3x</div>
-    <div class="itemtag">x4x</div>
-</div>
+</head>
 
-<script src="scripTags.js"></script>
+<body>
 
+<header></header>
+<main>
+    <section class="container">
+        <h1>Przykładowe drop-tag: </h1>
+        <p>
+            Wybrane pole input zostaje podmienione przez skrypt JS
+        </p>
+        <div class="field-tags">
+            <p>Tagi:</p>
+            <div class="one">
+                <input type=text name="tags_name" value="last">
+            </div>
+        </div>
+        
+        <div class="field-tags-list">
+            <div class="itemtag">word1</div>
+            <div class="itemtag">word2</div>
+            <div class="itemtag">word3</div>
+            <div class="itemtag">word4</div>
+        </div>
+    </section>
+</main>
+
+<footer> Copyright © Krowdel </footer>
 <script>
-     const configOne = {
-            inputName: "tags_name",
-            separate: ", ",
-            type: "text",
-            limit: 255
-        };
-        const tagsOne = new Tags(configOne, 'pl');
+    const config = {
+           inputName: "tags_name",
+           fieldDrop: ".field-tags-list .itemtag",
+           separate: ", ",
+           type: "text",
+           limit: 255
+       };
+       const tags = new Tags(config, 'pl');
 </script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-class TagTransl {
+class TagTranslate {
     constructor(lang) {
         switch(lang) {
             case 'pl': return this.pl(); break;
@@ -81,8 +81,7 @@ class Tags {
             separate: ', ',     // seprator danych do wysłania 
             type: "default",    // typ walidacji mail, text 
             limit: 512          // całkowity limit dlugosci stringa O lub null brak limitu  
-        }, lang='pl') 
-    {
+        }, lang='pl') {
 
         this.config = config;
         if (!this.config.fieldDrop) { this.config.fieldDrop ='.field-tags-list .itemtag'; }
@@ -90,7 +89,7 @@ class Tags {
         if (!this.config.type)     { this.config.type ='default'; }
         if (!this.config.limit)    { this.config.limit =0; }
         this.alert = null;
-        this.trans= new TagTransl(lang);
+        this.trans= new TagTranslate(lang);
         this.createArea();
         this.areaTags = document.querySelector('.field .areaTags.'+this.config.inputName);
         this.input = document.querySelector('[data-empty=' + this.config.inputName + ']');
@@ -323,7 +322,7 @@ class Tags {
     addInfo(info) {
         const div = document.querySelector('[data-alert='+this.config.inputName+']');
         if (info) {
-            div.innerHTML = '<span class="tagAlert">'+this.trans.alertTitle+' </span>'+info;
+            div.innerHTML = '<span class="tagAlert"><strong>'+this.trans.alertTitle+': </strong>'+info+'</span>';
         } else { 
             div.innerHTML = info;
         }
